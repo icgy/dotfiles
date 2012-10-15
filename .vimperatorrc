@@ -60,3 +60,4 @@ let g:twittperator_use_ssl_connection_for_api_ep = 1
 " Google Reader, feedsomekeys_3.js
 command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
 lazy fmaps -u='www\.google\.com/reader' -events=vkeypress j k n p m s v A r S N P X O u / ? J K
+
