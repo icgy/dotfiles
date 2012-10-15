@@ -1,0 +1,63 @@
+" vim: set ft=vimperator:
+
+" title
+set titlestring=vimperator
+
+" focus content
+set focuscontent
+
+" use visualbell not beep
+set visualbell
+
+" invalid visualbell
+highlight Bell display:none
+
+" mapping <C-v> for paste on command line
+cmap <C-v> <S-Insert>
+imap <C-v> <S-Insert>
+
+" mapping ctrl + a
+noremap <C-a> <Insert><C-a><Insert>
+
+" twitter
+map po :tw 
+map miteru :copy%TITLE% - %URL%<CR>:tw Browsing : <C-v><CR><esc>
+map nikki :copy%TITLE% - %URL%<CR>:tw Wrote : <C-v><CR><esc>
+map w :open www.twitter.com
+
+" Google bookmark bookmarklet
+map B :open javascript:location.href='http://www.google.com/bookmarks/mark?op=add&bkmk='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)<CR>
+map b :open https://www.google.com/bookmarks/lookup?q=&hl=ja<CR>
+
+" Google reader bookmarklet
+map GR :open javascript:var%20b=document.body;if(b&&!document.xmlVersion){void(z=document.createElement('script'));void(z.src='http://www.google.com/reader/ui/subscribe-bookmarklet.js');void(b.appendChild(z));}else{location='http://www.google.com/reader/view/feed/'+encodeURIComponent(location.href)}<CR>
+map gr :open http://www.google.com/reader/view/user/-/state/com.google/reading-list<CR>
+
+" copy
+map u :copy%URL%<CR>
+map y :copy%TITLE% - %URL%<CR><esc>
+
+" restart
+map sai :restart
+
+" tab
+map <Left> gT
+map <Right> gt
+
+" scroll 5times
+noremap j 10j
+noremap k 10k
+
+" quit
+map q :quit
+
+" private
+map pr <S-M-p>
+
+" twitter HTTPS
+let g:twittperator_use_ssl_connection_for_api_ep = 1
+
+" Google Reader, feedsomekeys_3.js
+command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
+lazy fmaps -u='www\.google\.com/reader' -events=vkeypress j k n p m s v A r S N P X O u / ? J K
+
