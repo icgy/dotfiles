@@ -22,6 +22,9 @@ set fileformats=unix,dos,mac
 "BSで消せるように
 set backspace=indent,eol,start
 
+"行末/行頭を移動可能に
+set whichwrap=b,s,[,],<,>
+
 "補完
 set wildmenu
 set wildmode=list:longest
@@ -89,8 +92,7 @@ endif
 
 " 改行コードの自動認識
 set fileformats=unix,dos,mac
-" □とか○の文字があってもカーソル位置がずれないようにする
+" □とか○の文字があってもカーソル位置がずれないようにす
 if exists('&ambiwidth')
   set ambiwidth=double
 endif
-
