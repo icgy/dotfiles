@@ -2,41 +2,41 @@ if has('gui_running') && !has('unix')
   set encoding=utf-8
 endif
 scriptencoding cp932 
-set nocompatible "vi$B8_49%*%U(B
+set nocompatible "vi互換オフ
 set nobackup
 set noswapfile
 set showcmd
-set showmatch "$B3g8L$N%^%C%A%s%0(B
+set showmatch "括弧のマッチング
 set autoindent
 set smartindent
-set number "$B9THV9f(B
-syntax on "$B%7%s%?%C%/%9%O%$%i%$%H(B
+set number "行番号
+syntax on "シンタックスハイライト
 set cursorline "Highlght current line
 colorscheme delek "for Mac
 filetype indent on
 
-"$B%U%!%$%k4XO"(B
+"ファイル関連
 set fileformat=unix
 set fileformats=unix,dos,mac
 
-"BS$B$G>C$;$k$h$&$K(B
+"BSで消せるように
 set backspace=indent,eol,start
 
-"$B9TKv(B/$B9TF,$r0\F02DG=$K(B
+"行末/行頭を移動可能に
 set whichwrap=b,s,[,],<,>
 
-"$BJd40(B
+"補完
 set wildmenu
 set wildmode=list:longest
 set completeopt=menu,preview,menuone
 
-"$B%?%V$r(B2$B6uGr$K(B
+"タブを2空白に
 set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
-"$BJ8;z%3!<%I$N<+F0G'<1(B
+"文字コードの自動認識
 "http://www.kawaz.jp/pukiwiki/?vim#content_1_7
 if &encoding !=# 'utf-8'
   set encoding=japan
@@ -45,16 +45,16 @@ endif
 if has('iconv')
   let s:enc_euc = 'euc-jp'
   let s:enc_jis = 'iso-2022-jp'
-  "iconv$B$,(BeucJP-ms$B$KBP1~$7$F$$$k$+$r%A%'%C%/(B
+  "iconvがeucJP-msに対応しているかをチェック
   if iconv("\x87\x64\x87\x6a", 'cp932', 'eucjp-ms') ==# "\xad\xc5\xad\xcb"
     let s:enc_euc = 'eucjp-ms'
     let s:enc_jis = 'iso-2022-jp-3'
-  " iconv$B$,(BJISX0213$B$KBP1~$7$F$$$k$+$r%A%'%C%/(B
+  " iconvがJISX0213に対応しているかをチェック
   elseif iconv("\x87\x64\x87\x6a", 'cp932', 'euc-jisx0213') ==# "\xad\xc5\xad\xcb"
     let s:enc_euc = 'euc-jisx0213'
     let s:enc_jis = 'iso-2022-jp-3'
   endif
-  " fileencodings$B$r9=C[(B
+  " fileencodingsを構築
   if &encoding ==# 'utf-8'
     let s:fileencodings_default = &fileencodings
     let &fileencodings = s:enc_jis .','. s:enc_euc .',cp932'
@@ -74,12 +74,12 @@ if has('iconv')
       let &fileencodings = &fileencodings .','. s:enc_euc
     endif
   endif
-  " $BDj?t$r=hJ,(B
+  " 定数を処分
   unlet s:enc_euc
   unlet s:enc_jis
 endif
 
-" $BF|K\8l$r4^$^$J$$>l9g$O(B fileencoding $B$K(B encoding $B$r;H$&$h$&$K$9$k(B
+" 日本語を含まない場合は fileencoding に encoding を使うようにする
 if has('autocmd')
   function! AU_ReCheck_FENC()
     if &fileencoding =~# 'iso-2022-jp' && search("[^\x01-\x7e]", 'n') == 0
@@ -90,9 +90,9 @@ if has('autocmd')
   autocmd BufReadPost * call AU_ReCheck_FENC()
 endif
 
-" $B2~9T%3!<%I$N<+F0G'<1(B
+" 改行コードの自動認識
 set fileformats=unix,dos,mac
-" $B""$H$+!{$NJ8;z$,$"$C$F$b%+!<%=%k0LCV$,$:$l$J$$$h$&$K$9(B
+" □とか○の文字があってもカーソル位置がずれないようにす
 if exists('&ambiwidth')
   set ambiwidth=double
 endif
