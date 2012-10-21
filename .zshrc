@@ -1,5 +1,6 @@
 ### .zshrc
 export LANG=ja_JP.UTF-8
+PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
 
 # 補完機能の強化
 autoload -U compinit
@@ -14,7 +15,7 @@ alias tmux='tmux -2'
 #tmuxの自動起動
 if [ -z "$PS1" ] ; then return ; fi
 
-if [ -z $TMUX ] ; then
+if [ -z $TMUX ] && [ $TERM != "screen" ]; then
   tmuxls=`tmux ls`
     if [ -z $tmuxls ] ; then
       tmux
@@ -29,4 +30,3 @@ setopt auto_cd      # ディレクトリ名だけcd
 setopt correct      # スペルチェック
 setopt cdable_vars  # cd ..のときにリンクを辿らない
 
-PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
