@@ -92,7 +92,3 @@ endif
 
 " 改行コードの自動認識
 set fileformats=unix,dos,mac
-" □とか○の文字があってもカーソル位置がずれないようにる
-if exists('&ambiwidth')
-  set ambiwidth=double
-endif
