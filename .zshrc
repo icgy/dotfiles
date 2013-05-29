@@ -1,6 +1,10 @@
 ### .zshrc
 export LANG=ja_JP.UTF-8
-PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
+export RBENV_ROOT=/usr/local/rbenv
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH="$RBENV_ROOT/bin:$PATH"
+export MANPATH=/opt/local/man:$MANPATH
+eval "$(rbenv init -)"
 
 # 補完機能の強化
 autoload -U compinit

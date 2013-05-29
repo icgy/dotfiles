@@ -15,6 +15,12 @@ set cursorline "Highlght current line
 colorscheme delek "for Mac
 filetype indent on
 
+"Vundle 
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'TwitVim'
+
 "ファイル関連
 set fileformat=unix
 set fileformats=unix,dos,mac
@@ -92,3 +98,10 @@ endif
 
 " 改行コードの自動認識
 set fileformats=unix,dos,mac
+
+" twitvim
+let twitvim_count = 100
+
+
+
+
