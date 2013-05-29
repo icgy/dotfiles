@@ -3,6 +3,23 @@ if has('gui_running') && !has('unix')
 endif
 scriptencoding cp932 
 set nocompatible "vi互換オフ
+
+" neobundle
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Recommended to install
+" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'gmarik/vundle'
+NeoBundle 'TwitVim'
+
 set nobackup
 set noswapfile
 set showcmd
@@ -14,12 +31,6 @@ syntax on "シンタックスハイライト
 set cursorline "Highlght current line
 colorscheme delek "for Mac
 filetype indent on
-
-"Vundle 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'TwitVim'
 
 "ファイル関連
 set fileformat=unix
