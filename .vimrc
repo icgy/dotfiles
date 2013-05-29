@@ -19,6 +19,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'gmarik/vundle'
 NeoBundle 'TwitVim'
+NeoBundle 'plasticboy/vim-markdown'
 
 set nobackup
 set noswapfile
