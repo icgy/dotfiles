@@ -17,7 +17,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
 NeoBundle 'Shougo/vimproc'
-NeoBundle 'gmarik/vundle'
+NeoBundle 'Shougo/unite.vim'
 NeoBundle 'TwitVim'
 NeoBundle 'plasticboy/vim-markdown'
 
