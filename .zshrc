@@ -2,7 +2,7 @@
 export LANG=ja_JP.UTF-8
 export RBENV_ROOT=/usr/local/rbenv
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PATH="$RBENV_ROOT/bin:$PATH"
+export PATH=$RBENV_ROOT/shims:$PATH
 export MANPATH=/opt/local/man:$MANPATH
 eval "$(rbenv init -)"
 
