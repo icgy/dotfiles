@@ -4,7 +4,7 @@ export RBENV_ROOT=/usr/local/rbenv
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$RBENV_ROOT/shims:$PATH
 export MANPATH=/opt/local/man:$MANPATH
-eval "$(rbenv init -)"
+eval "$(rbenv init - zsh)"
 
 # 補完機能の強化
 autoload -U compinit
