@@ -113,7 +113,3 @@ set fileformats=unix,dos,mac
 
 " twitvim
 let twitvim_count = 100
-
-
-
-
