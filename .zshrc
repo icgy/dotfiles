@@ -1,11 +1,10 @@
 # .zshrc
 export LANG=ja_JP.UTF-8
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export RBENV_ROOT=/usr/local/rbenv
-export PATH=$RBENV_ROOT/shims:$PATH
-export PATH=$RBENV_ROOT/bin:$PATH
-export MANPATH=/opt/local/man:$MANPATH
-eval "$(rbenv init - zsh)"
+export PATH=/usr/local/bin:/sbin:$PATH
+eval "$(rbenv init -)"
+
+# zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 # 補完機能の強化
 autoload -U compinit
@@ -34,4 +33,3 @@ setopt autopushd    # cd時に自動でpush
 setopt auto_cd      # ディレクトリ名だけcd
 setopt correct      # スペルチェック
 setopt cdable_vars  # cd ..のときにリンクを辿らない
-
