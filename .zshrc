@@ -3,16 +3,9 @@ export LANG=ja_JP.UTF-8
 export PATH=/usr/local/bin:/sbin:$PATH
 eval "$(rbenv init -)"
 
-# zsh-completions
-#fpath=(/usr/local/share/zsh-completions $fpath)
-[ -d $HOME/.zsh/zsh-completions/src ] && fpath=($HOME/.zsh/zsh-completions/src $fpath)
-
 # 補完機能の強化
 autoload -U compinit
 compinit
-
-#処理に時間がかかった場合に自動的に処理時間を表示する
-REPORTTIME=1
 
 #常に -2 オプションで起動するように (強制的に端末が256色だと認識させる)
 alias tmux='tmux -2'
@@ -34,3 +27,8 @@ setopt autopushd    # cd時に自動でpush
 setopt auto_cd      # ディレクトリ名だけcd
 setopt correct      # スペルチェック
 setopt cdable_vars  # cd ..のときにリンクを辿らない
+
+# zsh-completions
+if [ -e /usr/local/share/zsh-completions ]; then
+  fpath=(/usr/local/share/zsh-completions $fpath)
+fi
