@@ -20,7 +20,6 @@ fi
 
 # 補完機能の強化
 autoload -U compinit
-compinit -u
 
 # Option(man zshoptions)
 setopt autopushd    # cd時に自動でpush
@@ -30,3 +29,4 @@ setopt cdable_vars  # cd ..のときにリンクを辿らない
 
 # zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
+compinit
