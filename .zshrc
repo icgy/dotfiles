@@ -3,10 +3,6 @@ export LANG=ja_JP.UTF-8
 export PATH=/usr/local/bin:/sbin:$PATH
 eval "$(rbenv init -)"
 
-# 補完機能の強化
-autoload -U compinit
-compinit -u
-
 #常に -2 オプションで起動するように (強制的に端末が256色だと認識させる)
 alias tmux='tmux -2'
 
@@ -21,6 +17,10 @@ if [ -z $TMUX ] && [ $TERM != "screen" ]; then
       tmux attach
     fi
 fi
+
+# 補完機能の強化
+autoload -U compinit
+compinit -u
 
 # Option(man zshoptions)
 setopt autopushd    # cd時に自動でpush
