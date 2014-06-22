@@ -4,7 +4,8 @@ export PATH=/usr/local/bin:/sbin:$PATH
 eval "$(rbenv init -)"
 
 # zsh-completions
-fpath=(/usr/local/share/zsh-completions $fpath)
+#fpath=(/usr/local/share/zsh-completions $fpath)
+[ -d $HOME/.zsh/zsh-completions/src ] && fpath=($HOME/.zsh/zsh-completions/src $fpath)
 
 # 補完機能の強化
 autoload -U compinit
