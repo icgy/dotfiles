@@ -113,3 +113,6 @@ set fileformats=unix,dos,mac
 
 " twitvim
 let twitvim_count = 100
+
+" templete for Ruby
+autocmd BufNewFile *.rb 0r $HOME/.vim/template/ruby.txt
