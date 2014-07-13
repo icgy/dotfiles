@@ -16,8 +16,6 @@ if [ -z $TMUX ] && [ $TERM != "screen" ]; then
 fi
 
 autoload -U compinit
-autoload predict-on
-predict-on 
 
 setopt autopushd
 setopt auto_cd
@@ -30,3 +28,4 @@ RPROMPT='%B%F{blue}@%n[%~]%f%b'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 compinit
+zstyle ':completion:*:default' menu select=1
