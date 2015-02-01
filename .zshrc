@@ -23,9 +23,6 @@ setopt correct
 setopt list_packed
 setopt cdable_vars
 
-PROMPT='%B%F{yellow}>w</ < %f%b'
-RPROMPT='%B%F{blue}%n@%m[%~]%f%b'  
-
 fpath=(/usr/local/share/zsh-completions $fpath)
 compinit
 zstyle ':completion:*:default' menu select=1
